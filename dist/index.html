@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login - Taller Reparaciones</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow max-w-sm w-full">
+        <h1 class="text-2xl font-bold mb-4 text-center">Iniciar Sesión</h1>
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label class="block font-semibold mb-1">Usuario:</label>
+                <input type="text" id="username" class="border border-gray-300 p-2 w-full" required>
+            </div>
+            <div>
+                <label class="block font-semibold mb-1">Contraseña:</label>
+                <input type="password" id="password" class="border border-gray-300 p-2 w-full" required>
+            </div>
+            <div>
+                <label class="block font-semibold mb-1">Rol:</label>
+                <select id="role" class="border border-gray-300 p-2 w-full">
+                    <option value="admin">Administrador</option>
+                    <option value="tecnico">Técnico</option>
+                </select>
+            </div>
+            <button type="submit" class="bg-primary text-white w-full p-2 rounded">Ingresar</button>
+            <p id="login-error" class="text-red-500 text-center mt-2"></p>
+        </form>
+    </div>
+    <script src="../dist/js/app.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', loginHandler);
+    </script>
+</body>
+</html>

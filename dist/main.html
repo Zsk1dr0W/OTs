@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Panel Principal</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-primary p-4 text-white flex justify-between">
+        <div class="font-bold">Taller Reparaciones</div>
+        <div class="space-x-4">
+            <a href="nueva-orden.html" class="hover:underline">Nueva Orden</a>
+            <a href="listado.html" class="hover:underline">Órdenes</a>
+            <a href="inventario.html" id="link-inventario" class="hover:underline hidden">Inventario</a>
+            <a href="reportes.html" id="link-reportes" class="hover:underline hidden">Reportes</a>
+            <button id="logout-btn" class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded">Cerrar Sesión</button>
+        </div>
+    </nav>
+    <div class="container mx-auto mt-8">
+        <h2 class="text-xl font-semibold">Panel Principal</h2>
+        <p class="mt-2">Bienvenido, seleccione una opción del menú.</p>
+    </div>
+
+    <script src="../src/js/app.js"></script>
+    <script>
+        checkAuth();
+        mostrarOpcionesRol(); // Esta función mostrará/ocultará enlaces según el rol.
+        document.getElementById('logout-btn').addEventListener('click', logoutHandler);
+    </script>
+</body>
+</html>
